@@ -72,6 +72,8 @@ public class TermuxFloatService extends Service {
                     setVisible(true);
                     break;
                 case TERMUX_FLOAT_SERVICE.ACTION_HIDE:
+                case "com.termux.window.ACTION_START_INVISIBLE":
+                case "com.termux.window.ACTION_START_SILENT":
                     setVisible(false);
                     break;
                 default:

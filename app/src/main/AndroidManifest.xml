@@ -37,8 +37,15 @@
 
         <service
             android:name=".TermuxFloatService"
-            android:exported="false"
+            android:exported="true"
             android:foregroundServiceType="specialUse">
+            <intent-filter>
+                <action android:name="com.termux.window.ACTION_START_INVISIBLE" />
+                <action android:name="com.termux.window.ACTION_START_SILENT" />
+                <action android:name="com.termux.window.ACTION_HIDE" />
+                <action android:name="com.termux.window.ACTION_SHOW" />
+                <action android:name="com.termux.window.ACTION_STOP_SERVICE" />
+            </intent-filter>
             <property
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
                 android:value="Floating terminal window overlay service" />
